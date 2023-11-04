@@ -2,10 +2,10 @@ import mongoose from 'mongoose';
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_CONNECTION_URI, {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
-    });
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {
+			useUnifiedTopology: true,
+			useNewUrlParser: true,
+		});
     console.log(`Mongo DB connected: ${conn.connection.host}`);
   } catch (error) {
     console.log(`error: ${error.message}`);
